@@ -39,7 +39,7 @@ void kaloriaszamitas(){
     {
         cout << "Nem(F/N):" << " ";
         if(!(cin >> person.nem) and (typeid(person.nem) == typeid(char))){
-            throw runtime_error("Hibas adatformatum a 'Nem' mezoben!");
+            throw runtime_error("Hibas adatformatum a 'Nem' mezoben!, probalja ujra!");
         }
         cout << (person.nem) << " ";
         cout << "Kor:" << " ";
