@@ -9,9 +9,9 @@ ofstream FileKi(file, std::ofstream::app);
 struct rekord
 {
     char nem;
-    short int kor;
-    float suly;
-    short int magassag;
+    short int age;
+    float weight;
+    short int height;
 };
 rekord person;
 
@@ -27,9 +27,9 @@ void kiiras(){
     FileKi.open(file, std::ofstream::app);
     if (person.nem == 'F' or person.nem == 'f')
     {
-        FileKi << "Ferfi BMR: " << manBmr(person.suly, person.magassag, person.kor) << " Kcal" <<"\n";
+        FileKi << "Ferfi BMR: " << manBmr(person.weight, person.height, person.age) << " Kcal" <<"\n";
     } else if(person.nem == 'N' or person.nem == 'n'){
-        FileKi << "Noi BMR: " << womanBmr(person.suly, person.magassag, person.kor) << " Kcal" <<"\n";
+        FileKi << "Noi BMR: " << womanBmr(person.weight, person.height, person.age) << " Kcal" <<"\n";
     }
     FileKi.close();
 }
@@ -41,24 +41,24 @@ void kaloriaszamitas(){
         if(!(cin >> person.nem) and (typeid(person.nem) == typeid(char))){
             throw runtime_error("Hibas adatformatum a 'Nem' mezoben!, probalja ujra!");
         }
-        cout << (person.nem) << " ";
+        //cout << (person.nem) << " ";
         cout << "Kor:" << " ";
-        if(!(cin >> person.kor)){
+        if(!(cin >> person.age)){
             throw runtime_error("Hibas adatformatum a 'Kor' mezoben!");    
         }
         cout << "Suly:" << " ";
-        if(!(cin >> person.suly)){
+        if(!(cin >> person.weight)){
             throw runtime_error("Hibas adatformatum a 'Suly' mezoben!");
         }
         cout << "Magassag:"<< " ";
-        if(!(cin >> person.magassag)){
+        if(!(cin >> person.height)){
             throw runtime_error("Hibas adatformatum a 'Magassag' mezoben!");
         }
         if (islower(person.nem) or isupper(person.nem)){
-            manBmr(person.suly, person.magassag, person.kor);
+            manBmr(person.weight, person.height, person.age);
             }
         else if(islower(person.nem) or isupper(person.nem)){
-            womanBmr(person.suly, person.magassag, person.kor);
+            womanBmr(person.weight, person.height, person.age);
         }
         kiiras();
     }
