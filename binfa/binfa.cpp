@@ -512,9 +512,9 @@ main (int argc, char *argv[])
     // a bemenetet binárisan olvassuk, de a kimenő fájlt már karakteresen írjuk, hogy meg tudjuk
     // majd nézni... :) l. az említett 5. ea. C -> C++ gyökkettes átírási példáit
 
-    while (beFile.read ((char *) &b, sizeof (unsigned char)))
-        if (b == 0x0a)
-            break;
+    //while (beFile.read ((char *) &b, sizeof (unsigned char)))
+    //    if (b == 0x0a)
+    //        break;
 
     bool kommentben = false;
 
