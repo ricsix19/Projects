@@ -101,6 +101,9 @@ void keres(){
                 cout << "Sajnos nincs ilyen szinu allat." << endl;
             }
             break;
+        default:
+            cout << "Nem helyes adatot adtal meg!" << endl;
+            break;
     }
 }
 
