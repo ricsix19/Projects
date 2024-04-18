@@ -35,11 +35,6 @@ void beolvas(){
     {
         allatv.push_back(allatolv);
     }
-    /*
-    for(Allat a: allatv){
-        cout << a;
-    }
-    */
     inFile.close();
 }
 
@@ -47,6 +42,7 @@ void keres(){
     string keres;
     string faj;
     string maskeres;
+
     cout << "Milyen allatot keresel(faj,nev,kor,szin) ";
     cin >> keres;
 
@@ -56,7 +52,9 @@ void keres(){
     else{
         cin >> maskeres;
     }
+
     bool megvan = false;
+
     switch(keres[0])
     {
         case 'f':
@@ -66,6 +64,9 @@ void keres(){
                     megvan = true;
                 }
             }
+            if(!megvan){
+                cout << "Sajnos nincs ilyen faj." << endl;
+            }
             break;
         case 'n':
             for(Allat i: allatv){
@@ -73,6 +74,9 @@ void keres(){
                     cout << i;
                     megvan = true;
                 }
+            }
+            if(!megvan){
+                cout << "Sajnos nincs ilyen nevu allat." << endl;
             }
             break;
         case 'k':
@@ -82,6 +86,9 @@ void keres(){
                     megvan = true;
                 }
             }
+            if(!megvan){
+                cout << "Sajnos nincs ilyen koru allat." << endl;
+            }
             break;
         case 's':
             for(Allat i: allatv){
@@ -89,6 +96,9 @@ void keres(){
                     cout << i;
                     megvan = true;
                 }
+            }
+            if(!megvan){
+                cout << "Sajnos nincs ilyen szinu allat." << endl;
             }
             break;
     }
