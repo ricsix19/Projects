@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
+#include <cmath>
 #include <map>
 #include <string>
 using namespace std;
@@ -30,7 +30,7 @@ void szamitas(){
         seged += elemek.second;
     }
     for(pair<string, float> elemek: vasarlas){
-        cout << elemek.first << " szazalek:" << elemek.second/seged <<endl;
+        cout << elemek.first << " szazalek:" << ((elemek.second/seged)*100) << "%" <<endl;
     }
     cout <<endl;
 }
