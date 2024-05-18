@@ -1,37 +1,42 @@
 #include <iostream>
 #include <fstream>
-#include <vector>
+#include <cmath>
 #include <map>
 #include <string>
 using namespace std;
 
 string file = "vasar.txt";
 ifstream FileBe;
-map<int, string> vasarlas;
+map<string, float> vasarlas;
 
 void beolvas(){
     FileBe.open(file);
-    int key;
-    string value;
-    
-    while(FileBe >> key >> value){
-        vasarlas[key] = value;
+    int row;
+    string inData;
+
+    while(FileBe >> inData){
+        if(isdigit(inData[0])){
+            row++;
+        } else{
+        vasarlas[inData]++;
+        }
     }
+    FileBe.close();
+}
 
-    map<int, string>::iterator it = vasarlas.begin();
-
-    while(it != vasarlas.end()){
-        int line = it->first;
-        string data = it -> second;
-
-        cout << line << " " << data;
-        it++;
+void szamitas(){
+    int seged = 0;
+    for(pair<string, float> elemek: vasarlas){
+        seged += elemek.second;
     }
-    
+    for(pair<string, float> elemek: vasarlas){
+        cout << elemek.first << " szazalek:" << ((elemek.second/seged)*100) << "%" <<endl;
+    }
+    cout <<endl;
 }
 
 int main(){
     beolvas();
-
+    szamitas();
     return 0;
 }
