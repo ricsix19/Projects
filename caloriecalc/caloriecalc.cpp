@@ -25,10 +25,10 @@ float womanBmr(float weight, short int height, short int age){
 
 void kiiras(){
     FileKi.open(file, std::ofstream::app);
-    if (person.nem == 'F' or person.nem == 'f')
+    if (person.nem == 'F' || person.nem == 'f')
     {
         FileKi << "Ferfi BMR: " << manBmr(person.weight, person.height, person.age) << " Kcal" <<"\n";
-    } else if(person.nem == 'N' or person.nem == 'n'){
+    } else if(person.nem == 'N' || person.nem == 'n'){
         FileKi << "Noi BMR: " << womanBmr(person.weight, person.height, person.age) << " Kcal" <<"\n";
     }
     FileKi.close();
@@ -38,13 +38,13 @@ void kaloriaszamitas(){
     try
     {
         cout << "Nem(F/N):" << " ";
-        if(!(cin >> person.nem) and (typeid(person.nem) == typeid(char))){
+        if(!(cin >> person.nem) && (typeid(person.nem) == typeid(char))){
             throw runtime_error("Hibas adatformatum a 'Nem' mezoben!, probalja ujra!");
         }
         //cout << (person.nem) << " ";
         cout << "Kor:" << " ";
         if(!(cin >> person.age)){
-            throw runtime_error("Hibas adatformatum a 'Kor' mezoben!");    
+            throw runtime_error("Hibas adatformatum a 'Kor' mezoben!");
         }
         cout << "Suly:" << " ";
         if(!(cin >> person.weight)){
@@ -54,10 +54,10 @@ void kaloriaszamitas(){
         if(!(cin >> person.height)){
             throw runtime_error("Hibas adatformatum a 'Magassag' mezoben!");
         }
-        if (islower(person.nem) or isupper(person.nem)){
+        if (islower(person.nem) || isupper(person.nem)){
             manBmr(person.weight, person.height, person.age);
             }
-        else if(islower(person.nem) or isupper(person.nem)){
+        else if(islower(person.nem) || isupper(person.nem)){
             womanBmr(person.weight, person.height, person.age);
         }
         kiiras();
