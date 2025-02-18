@@ -1,4 +1,4 @@
-// Herczeg Martinez OV1GNP
+/*Developed by Herczeg Martinez*/
 #include <iostream>
 #include <fstream> 
 #include <string>
