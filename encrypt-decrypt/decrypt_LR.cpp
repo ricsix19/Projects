@@ -1,3 +1,5 @@
+/*Developed by Ladányi Richárd*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
